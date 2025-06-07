@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Card Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <main>
+    <form id="credit-card" novalidate>
+      <div class="card-wrapper">
+        <!-- Card Back -->
+        <div class="card card-back">
+          <div class="black-bar"></div>
+          <div class="cvc-box">
+            <label for="cvc">CVC/CVV</label>
+            <input type="text" id="cvc" name="cvc" required maxlength="3" minlength="3" pattern="\d{3}" placeholder="xxx" autocomplete="off">
+          </div>
+        </div>
+        <!-- Card Front -->
+        <div class="card card-front">
+          <div class="total">TOTAL: $199</div>
+          <img
+            class="card-image"
+            src="favicon.png"
+            height="55px"
+            alt="Card Logo"
+          >
+          <div class="input-group">
+            <label for="cardNumber">CARD NUMBER</label>
+            <input type="text" id="cardNumber" name="cardNumber" required maxlength="19" minlength="19" pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}" placeholder="1234 5678 9101 1020" autocomplete="off">
+          </div>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="cardHolder">CARD HOLDER</label>
+              <input type="text" id="cardHolder" name="cardHolder" required maxlength="30" placeholder="John Doe" autocomplete="off">
+            </div>
+            <div class="input-group">
+              <label for="expMonth">EXPIRATION</label>
+              <div class="exp-fields">
+                <input type="text" id="expMonth" name="expMonth" required maxlength="2" minlength="2" pattern="\d{2}" placeholder="MM" autocomplete="off">
+                <input type="text" id="expYear" name="expYear" required maxlength="2" minlength="2" pattern="\d{2}" placeholder="YY" autocomplete="off">
+              </div>
+            </div>
+          </div>
+        </div>
+    <button type="submit" class="card-submit">Submit</button>
+      </div>
+      <div class="errorMsg"></div>
+    </form>
+  </main>
+  <script src="card.js"></script>
+</body>
+</html>
