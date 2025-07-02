@@ -1,0 +1,303 @@
+/* ================= Global Reset & Base ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  #content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* ================= Global Images ================= */
+  /* 所有图片最大宽度为屏幕宽度的70%，高度自适应 */
+  img {
+    display: block;
+    max-width: 70vw;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* ================= Header ================= */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  header nav a {
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  header nav a:hover,
+  header nav a.active {
+    color: #555;
+  }
+  
+  /* 单独调整 logo 尺寸 */
+  .logo {
+    max-width: 200px;
+  }
+  
+  /* ================= Hero 区块 ================= */
+  #hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  #hero-box {
+    flex: 1;
+    text-align: center;
+  }
+  
+  #hero-msg {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* 首页与其他页面的标题样式 */
+  .home-title,
+  .style-title,
+  #hero-msg h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #hero-msg p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .button-box {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #444;
+  }
+  
+  /* ================= 主内容网格布局 ================= */
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  /* 文章与卡片通用样式（针对博客、套餐、设备、其他卡片） */
+  .blog-post,
+  .card,
+  .item-card,
+  .wedding-card,
+  .portrait-card,
+  .msg,
+  .i-card,
+  .w-card,
+  .p-card,
+  .won-card,
+  .v-card,
+  .c-card {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .blog-post h2,
+  .card h2,
+  .item-card h2,
+  .wedding-card h2,
+  .portrait-card h2,
+  .msg h2 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #222;
+  }
+  
+  .blog-post p,
+  .card p,
+  .item-card p,
+  .wedding-card p,
+  .portrait-card p,
+  .msg p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* 卡片内图片样式 */
+  .card-img,
+  .item-card .card-img,
+  .wedding-card .card-img,
+  .portrait-card .card-img {
+    width: 100%;
+    max-width: 70vw;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  
+  /* ================= Contact 表单 ================= */
+  .form-main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .form-main form ul {
+    list-style: none;
+  }
+  
+  .form-main form li {
+    margin-bottom: 20px;
+  }
+  
+  .form-main form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-main form input[type="text"],
+  .form-main form input[type="email"],
+  .form-main form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .form-main form input[type="text"]:focus,
+  .form-main form input[type="email"]:focus,
+  .form-main form textarea:focus {
+    border-color: #aaa;
+    outline: none;
+  }
+  
+  .form-main form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .form-main form li.button {
+    text-align: center;
+  }
+  
+  .form-main form button {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-main form button:hover {
+    background-color: #444;
+  }
+  
+  /* 反馈信息 */
+  #feedback {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #007700;
+    margin-bottom: 20px;
+    display: none;
+  }
+  
+  /* 表单提交后整体移动效果 */
+  .moveDown {
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* ================= Footer ================= */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eaeaea;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 40px;
+  }
+  
+  footer p {
+    margin: 10px 0;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px;
+  }
+  
+  /* 社交图标 */
+  .social {
+    margin-top: 10px;
+  }
+  
+  .social a {
+    margin: 0 5px;
+    display: inline-block;
+  }
+  
+  .social img {
+    max-width: 40px;
+  }
+  
+  /* ================= 响应式调整 ================= */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+    
+    header nav {
+      margin-top: 15px;
+    }
+    
+    #hero {
+      flex-direction: column;
+    }
+    
+    .home-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

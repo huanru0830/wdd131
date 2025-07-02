@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Picture Perfect Moments | Contact Us</title>
+  <link rel="stylesheet" href="styles/new.css">
+  <!-- 引入 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="content">
+    <header>
+      <a id="logo_link" href="index.html" aria-label="Home">
+        <img class="logo responsive-img" src="images/Picture-Perfect-Moments-logos.jpeg" alt="Picture Perfect Moments Logo">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="styles-and-packeges.html">Styles &amp; Packages</a>
+        <a href="equipment-rental.html">Equipment Rental</a>
+        <a href="contactus.html" class="active">Contact Us</a>
+      </nav>
+    </header>
+    <main class="form-main">
+      <div id="feedback" role="alert"></div>
+      <form action="#" method="post">
+        <ul>
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" placeholder="Enter your name" required>
+          </li>
+          <li>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" placeholder="Enter your email" required>
+          </li>
+          <li>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message" placeholder="Your message..." required></textarea>
+          </li>
+          <li class="button">
+            <button type="submit" aria-label="Send Message">Send your message</button>
+          </li>
+        </ul>
+      </form>
+    </main>
+    <footer>
+      <p>2025 &copy; Huanru Guo</p>
+      <p><a href="site-plan.html">Site Plan</a> | <a href="contactus.html">Contact Us</a></p>
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="images/facebook.png" alt="Facebook Icon">
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="images/twitter.png" alt="Twitter Icon">
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="images/instagram.png" alt="Instagram Icon">
+        </a>
+      </div>
+    </footer>
+    <script>
+      // 表单提交后反馈信息
+      const feedbackElement = document.getElementById('feedback');
+      const formElement = document.forms[0];
+      formElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        feedbackElement.innerHTML = 'Hello ' + formElement.user_name.value + '! Thank you for your message. We will get back to you soon.';
+        feedbackElement.style.display = "block";
+        document.body.classList.toggle('moveDown');
+      });
+    </script>
+  </div>
+</body>
+</html>
