@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Picture Perfect Moments | Equipment Rental</title>
+  <link rel="stylesheet" href="styles/new.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="content">
+    <header>
+      <a id="logo_link" href="index.html" aria-label="Home">
+        <img class="logo" src="images/logo.jpg" alt="Picture Perfect Moments Logo">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="styles-and-packeges.html">Styles & Packages</a>
+        <a href="equipment-rental.html" class="active">Equipment Rental</a>
+        <a href="contactus.html">Contact Us</a>
+      </nav>
+    </header>
+    <section id="hero">
+      <div id="hero-box">
+        <img id="hero-img" src="images/pexels-alex-andrews-1203803.jpg" alt="Equipment for photography rental">
+      </div>
+      <div id="hero-msg">
+        <h1>Equipment Rental: Options Just For You</h1>
+        <p>Rent professional-grade photography equipment and accessories at affordable prices.</p>
+      </div>
+    </section>
+    <div id="filter-group">
+      <button class="filter-btn active" data-type="all">All</button>
+      <button class="filter-btn" data-type="Nikon">Nikon</button>
+      <button class="filter-btn" data-type="Sony">Sony</button>
+      <button class="filter-btn" data-type="Fuji">Fuji</button>
+      <button class="filter-btn" data-type="Lycar">Lycar</button>
+    </div>
+    <main class="home-grid" id="equipment-list">
+      <section class="i-card card" data-type="Nikon">
+        <img class="card-img" src="images/pexels-math-249597.jpg" alt="Nikon camera">
+        <h2>Nikon</h2>
+        <p class="price">$20/day</p>
+      </section>
+      <section class="w-card card" data-type="Nikon">
+        <img class="card-img" src="images/pexels-pixabay-51383.jpg" alt="Nikon lens">
+        <h2>Nikon</h2>
+        <p class="price">$25/day</p>
+      </section>
+      <section class="p-card card" data-type="Sony">
+        <img class="card-img" src="images/pexels-pixabay-45889.jpg" alt="Sony camera">
+        <h2>Sony</h2>
+        <p class="price">$30/day</p>
+      </section>
+      <section class="won-card card" data-type="Fuji">
+        <img class="card-img" src="images/pexels-dids-3777297.jpg" alt="Fuji camera">
+        <h2>Fuji</h2>
+        <p class="price">$10/day</p>
+      </section>
+      <section class="v-card card" data-type="Fuji">
+        <img class="card-img" src="images/pexels-math-90946.jpg" alt="Fuji lens">
+        <h2>Fuji</h2>
+        <p class="price">$20/day</p>
+      </section>
+      <section class="c-card card" data-type="Lycar">
+        <img class="card-img" src="images/pexels-alex-andrews-1203803.jpg" alt="Lycar equipment">
+        <h2>Lycar</h2>
+        <p class="price">$30/day</p>
+      </section>
+    </main>
+    <footer>
+      <p>2025 &copy; Huanru Guo</p>
+      <p><a href="site-plan.html">Site Plan</a> | <a href="contactus.html">Contact Us</a></p>
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="images/facebook.png" alt="Facebook Icon">
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="images/twitter.png" alt="Twitter Icon">
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="images/instagram.png" alt="Instagram Icon">
+        </a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // 设备筛选功能
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card[data-type]');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const type = btn.getAttribute('data-type');
+        cards.forEach(card => {
+          card.style.display = (type === 'all' || card.getAttribute('data-type') === type) ? '' : 'none';
+        });
+      });
+    });
+    // 价格高亮
+    document.querySelectorAll('.price').forEach(price => {
+      price.addEventListener('mouseenter', () => {
+        price.classList.add('price-highlight');
+      });
+      price.addEventListener('mouseleave', () => {
+        price.classList.remove('price-highlight');
+      });
+    });
+  </script>
+</body>
+</html>
